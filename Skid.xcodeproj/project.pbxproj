@@ -13,6 +13,10 @@
 		2F773A9D24532AB900E4C928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F773A9B24532AB900E4C928 /* Main.storyboard */; };
 		2F773A9F24532ABB00E4C928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F773A9E24532ABB00E4C928 /* Assets.xcassets */; };
 		2F773AA224532ABB00E4C928 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F773AA024532ABB00E4C928 /* LaunchScreen.storyboard */; };
+		2F773AAE24549EF900E4C928 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F773AAD24549EF900E4C928 /* Employee.swift */; };
+		2F773AB02454CD7200E4C928 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F773AAF2454CD7200E4C928 /* EmployeeCell.swift */; };
+		2F773AB62454CE2000E4C928 /* EmployeeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F773AB52454CE2000E4C928 /* EmployeeTableVC.swift */; };
+		2F773AB82454FD8B00E4C928 /* SkidAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F773AB72454FD8B00E4C928 /* SkidAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		2F773A9E24532ABB00E4C928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F773AA124532ABB00E4C928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F773AA324532ABB00E4C928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F773AAD24549EF900E4C928 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		2F773AAF2454CD7200E4C928 /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
+		2F773AB52454CE2000E4C928 /* EmployeeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableVC.swift; sourceTree = "<group>"; };
+		2F773AB72454FD8B00E4C928 /* SkidAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkidAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		2F773A9424532AB900E4C928 /* Skid */ = {
 			isa = PBXGroup;
 			children = (
+				2F773ABA2455090A00E4C928 /* APIManager */,
+				2F773AB9245508E200E4C928 /* Model */,
 				2F773A9524532AB900E4C928 /* AppDelegate.swift */,
 				2F773A9724532AB900E4C928 /* SceneDelegate.swift */,
 				2F773A9924532AB900E4C928 /* ViewController.swift */,
+				2F773AAF2454CD7200E4C928 /* EmployeeCell.swift */,
+				2F773AB52454CE2000E4C928 /* EmployeeTableVC.swift */,
 				2F773A9B24532AB900E4C928 /* Main.storyboard */,
 				2F773A9E24532ABB00E4C928 /* Assets.xcassets */,
 				2F773AA024532ABB00E4C928 /* LaunchScreen.storyboard */,
 				2F773AA324532ABB00E4C928 /* Info.plist */,
 			);
 			path = Skid;
+			sourceTree = "<group>";
+		};
+		2F773AB9245508E200E4C928 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F773AAD24549EF900E4C928 /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F773ABA2455090A00E4C928 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				2F773AB72454FD8B00E4C928 /* SkidAPIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F773A9A24532AB900E4C928 /* ViewController.swift in Sources */,
+				2F773AB62454CE2000E4C928 /* EmployeeTableVC.swift in Sources */,
+				2F773AAE24549EF900E4C928 /* Employee.swift in Sources */,
 				2F773A9624532AB900E4C928 /* AppDelegate.swift in Sources */,
 				2F773A9824532AB900E4C928 /* SceneDelegate.swift in Sources */,
+				2F773AB02454CD7200E4C928 /* EmployeeCell.swift in Sources */,
+				2F773AB82454FD8B00E4C928 /* SkidAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
