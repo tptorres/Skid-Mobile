@@ -10,12 +10,12 @@ import Foundation
 
 // Data Model for Employee
 struct Employee: Decodable {
-    let EID: Int
+    let id: Int
     let name: String
-    //let skills: [Skills]
     let email: String
     let department: String
     let phone: String
+    let skills: [Skills]
 }
 
 struct Skills: Decodable {

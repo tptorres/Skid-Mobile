@@ -16,12 +16,11 @@ class SkidAPIManager {
     let departmentUrl = "/department"
     
     func fetchSingleEmployee(employeeId: Int, completionHandler: @escaping (Result<Employee, Error>) -> ()) {
-        let urlString = baseUrl + String(employeeId)
+        let urlString = baseUrl + "/" + String(employeeId)
         
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, res, err in
-            
             if let err = err {
                 completionHandler(.failure(err))
                 return
@@ -53,8 +52,8 @@ class SkidAPIManager {
             guard let httpResponse = res as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
             
             do {
-                let employee = try JSONDecoder().decode([Employee].self, from: data!)
-                completionHandler(.success(employee))
+                let employees = try JSONDecoder().decode([Employee].self, from: data!)
+                completionHandler(.success(employees))
             } catch let jsonError {
                 completionHandler(.failure(jsonError))
             }

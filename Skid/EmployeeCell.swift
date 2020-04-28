@@ -10,7 +10,7 @@ import UIKit
 
 class EmployeeCell: UITableViewCell {
     
-    // Create the look if the employee cell 
+    // Create the look of the employee cell 
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var name: UILabel!
