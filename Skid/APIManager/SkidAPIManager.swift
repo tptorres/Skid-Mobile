@@ -8,10 +8,10 @@
 
 import Foundation
 
-
 class SkidAPIManager {
-    // Creating the singleton
+    
     static let shared = SkidAPIManager()
+    
     let baseUrl = "https://skid-api.herokuapp.com/api/v1/employees"
     let departmentUrl = "/department"
     
@@ -25,7 +25,6 @@ class SkidAPIManager {
                 completionHandler(.failure(err))
                 return
             }
-            // checking if the response code was a successful 200 status
             guard let httpResponse = res as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
             
             do {
@@ -43,12 +42,10 @@ class SkidAPIManager {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, res, err in
-            
             if let err = err {
                 completionHandler(.failure(err))
                 return
             }
-            // checking if the response code was a successful 200 status
             guard let httpResponse = res as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
             
             do {
@@ -72,7 +69,6 @@ class SkidAPIManager {
                 completionHandler(.failure(err))
                 return
             }
-            // checking if the response code was a successful 200 status
             guard let httpResponse = res as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
             
             do {
@@ -84,4 +80,31 @@ class SkidAPIManager {
         }.resume()
     }
     
+    func fetchSkillEmployees(skillName: String, completionHandler: @escaping (Result<[Employee], Error>) -> ()) {
+        
+        var skillName = skillName
+        if skillName == "public" {
+            skillName = "public_speaking"
+        }
+        
+        let urlString = baseUrl + "/skill?name=\(skillName)"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, res, err in
+            
+            if let err = err {
+                completionHandler(.failure(err))
+                return
+            }
+            guard let httpResponse = res as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
+            
+            do {
+                let employees = try JSONDecoder().decode([Employee].self, from: data!)
+                //print(employees)
+                completionHandler(.success(employees))
+            } catch let jsonError {
+                completionHandler(.failure(jsonError))
+            }
+        }.resume()
+    }
 }

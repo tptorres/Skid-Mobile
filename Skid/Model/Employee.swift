@@ -9,16 +9,16 @@
 import Foundation
 
 // Data Model for Employee
-struct Employee: Decodable {
+struct Employee: Codable {
     let id: Int
     let name: String
     let email: String
     let department: String
     let phone: String
-    let skills: [Skills]
+    let skills: [Skill]
 }
 
-struct Skills: Decodable {
+struct Skill: Codable {
     let skill: String
     let description: String
 }
