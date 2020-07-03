@@ -12,11 +12,14 @@ Flask(Python)
 
 ### At a glance
 
-<img src="images/screen-1.png" width="300" >
+<img src="images/screen-1.png" width="300">
 
-![](images/screen-1.png)
-![](images/screen-2.png)
-![](images/screen-3.png)
+
+<img src="images/screen-2.png" width="300" >
+
+
+<img src="images/screen-3.png" width="300" >
+
 
 
 
