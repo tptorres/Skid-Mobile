@@ -6,6 +6,7 @@ The app's main focus is to try and combat the disconnect that people have within
 
 ### Tech Stack
 Swift
+
 Flask(Python)
 
 
